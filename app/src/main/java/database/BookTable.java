@@ -2,6 +2,7 @@ package database;
 
 public class BookTable {
     public static final String book = "Book Table";
+    public static final String itemID = "ID";
     public static final String name = "Name";
     public static final String volume = "Volume";
     public static final String author = "Author";
@@ -15,8 +16,9 @@ public class BookTable {
 
     public static final String SQL_CREATE =
           "CREATE TABLE " + book +"("+
-            name + " TEXT PRIMARY KEY, " +
-            volume + " TEXT PRIMARY KEY, " +
+            itemID + " TEXT PRIMARY KEY, "+
+            name + " TEXT, " +
+            volume + " TEXT, " +
             author + " TEXT, " +
             genre + " TEXT, " +
             shelf + " TEXT, "+

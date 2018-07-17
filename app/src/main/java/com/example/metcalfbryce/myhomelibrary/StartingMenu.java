@@ -14,21 +14,35 @@ import android.widget.TextView;
 import database.DBHelper;
 
 public class StartingMenu extends AppCompatActivity {
+    //string for text of objects
+    private final String MAIN_MENU_TEXT = "Main Menu";
+    private final String BOOKSHELF_BTN_TEXT = "MY BOOKSHELVES";
+    private final String PEOPLE_BTN_TEXT = "MY PEOPLE";
+    //private final String SETTINGS_BTN_TEXT = "settings";
+
     SQLiteDatabase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_starting_menu);
+
+
+
+
         //database creation
         SQLiteOpenHelper dbHelper = new DBHelper(this);
         dbHelper.getWritableDatabase();
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_starting_menu);
-        //test
+
+        //Main Menu Text
+        TextView mainMenuText = findViewById(R.id.MainMenuText);
+        mainMenuText.setText(MAIN_MENU_TEXT);
 
         /*main menu buttons
         *
         */
         //bookshelf
         Button bookshelfBtn = findViewById(R.id.bookshelfBtn);
+        bookshelfBtn.setText(BOOKSHELF_BTN_TEXT);
         bookshelfBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +55,7 @@ public class StartingMenu extends AppCompatActivity {
 
         //people
         Button peopleBtn = findViewById(R.id.peopleBtn);
+        peopleBtn.setText(PEOPLE_BTN_TEXT);
         peopleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".BookShelves" />
-        <activity android:name=".People"></activity>
+        <activity android:name=".People" />
+        <activity android:name=".BookView"></activity>
     </application>
 
 </manifest>
