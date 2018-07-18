@@ -2,6 +2,7 @@ package com.example.metcalfbryce.myhomelibrary;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import database.BookItem;
 import database.DBHelper;
 import database.DataSource;
 
@@ -40,6 +42,19 @@ public class StartingMenu extends AppCompatActivity {
         //Main Menu Text
         TextView mainMenuText = findViewById(R.id.MainMenuText);
         mainMenuText.setText(MAIN_MENU_TEXT);
+        if(mDataSource.getBookCount() >0) {
+            try {
+                mDataSource.createItem(new BookItem("test", "test"));
+
+
+            } catch (SQLiteException e) {
+
+            } Toast.makeText(this, "test inserted",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this, "test already inserted",Toast.LENGTH_SHORT).show();
+
+        }
 
         /*main menu buttons
         *
