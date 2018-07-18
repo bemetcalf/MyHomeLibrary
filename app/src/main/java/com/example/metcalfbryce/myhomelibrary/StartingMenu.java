@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import database.BookItem;
 import database.DBHelper;
 import database.DataSource;
@@ -42,8 +44,6 @@ public class StartingMenu extends AppCompatActivity {
         //Main Menu Text
         TextView mainMenuText = findViewById(R.id.MainMenuText);
         mainMenuText.setText(MAIN_MENU_TEXT);
-        mDataSource.testDB();
-
         /*main menu buttons
         *
         */
@@ -71,6 +71,8 @@ public class StartingMenu extends AppCompatActivity {
             }
         });
 
+
+
     }
     @Override
     protected void onPause(){
@@ -82,4 +84,10 @@ public class StartingMenu extends AppCompatActivity {
         super.onResume();
         mDataSource.open();
     }
+   @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        mDataSource.close();
+
+   }
 }

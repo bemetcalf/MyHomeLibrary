@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".BookShelves" />
         <activity android:name=".People" />
-        <activity android:name=".BookView"></activity>
+        <activity android:name=".BookView" />
+        <activity android:name=".AddBooks"></activity>
     </application>
 
 </manifest>
