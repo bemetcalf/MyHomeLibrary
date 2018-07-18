@@ -16,7 +16,7 @@ public class BookTable {
 
     public static final String SQL_CREATE =
           "CREATE TABLE " + book +"("+
-            itemID + " TEXT PRIMARY KEY, "+
+            itemID + " INTEGER PRIMARY KEY, "+
             name + " TEXT, " +
             volume + " TEXT, " +
             author + " TEXT, " +

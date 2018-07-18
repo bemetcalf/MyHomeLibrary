@@ -10,8 +10,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import database.DBHelper;
+import database.DataSource;
 
 public class StartingMenu extends AppCompatActivity {
     //string for text of objects
@@ -20,7 +22,8 @@ public class StartingMenu extends AppCompatActivity {
     private final String PEOPLE_BTN_TEXT = "MY PEOPLE";
     //private final String SETTINGS_BTN_TEXT = "settings";
 
-    SQLiteDatabase database;
+    DataSource mDataSource;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +33,9 @@ public class StartingMenu extends AppCompatActivity {
 
 
         //database creation
-        SQLiteOpenHelper dbHelper = new DBHelper(this);
-        dbHelper.getWritableDatabase();
+        mDataSource= new DataSource(this);
+        mDataSource.open();
+        Toast.makeText(this, "Books Loaded",Toast.LENGTH_SHORT).show();
 
         //Main Menu Text
         TextView mainMenuText = findViewById(R.id.MainMenuText);
@@ -64,5 +68,15 @@ public class StartingMenu extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        mDataSource.close();
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        mDataSource.open();
     }
 }
