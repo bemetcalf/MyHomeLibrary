@@ -37,24 +37,12 @@ public class StartingMenu extends AppCompatActivity {
         //database creation
         mDataSource= new DataSource(this);
         mDataSource.open();
-        Toast.makeText(this, "Books Loaded",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Books Loaded",Toast.LENGTH_SHORT).show();
 
         //Main Menu Text
         TextView mainMenuText = findViewById(R.id.MainMenuText);
         mainMenuText.setText(MAIN_MENU_TEXT);
-        if(mDataSource.getBookCount() >0) {
-            try {
-                mDataSource.createItem(new BookItem("test", "test"));
-
-
-            } catch (SQLiteException e) {
-
-            } Toast.makeText(this, "test inserted",Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(this, "test already inserted",Toast.LENGTH_SHORT).show();
-
-        }
+        mDataSource.testDB();
 
         /*main menu buttons
         *

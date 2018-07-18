@@ -34,13 +34,13 @@ public class BookItem {
         ContentValues values = new ContentValues();
         values.put(BookTable.COLUMN_ITEM_ID, itemID);
         values.put(BookTable.name, name);
-        values.put(BookTable.volume, volume);
-        values.put(BookTable.author, author);
-        values.put(BookTable.genre, genre);
-        values.put(BookTable.shelf, shelf);
-        values.put(BookTable.format, format);
+        values.put(BookTable.COLUMN_VOLUME, volume);
+        values.put(BookTable.COLUMN_AUTHOR, author);
+        values.put(BookTable.COLUMN_GENRE, genre);
+        values.put(BookTable.COLUMN_SHELF, shelf);
+        values.put(BookTable.COLUMN_FORMAT, format);
         values.put(BookTable.people, people);
-        values.put(BookTable.picture, picture);
+        values.put(BookTable.COLUMN_PICTURE, picture);
 
         return values;
     }
