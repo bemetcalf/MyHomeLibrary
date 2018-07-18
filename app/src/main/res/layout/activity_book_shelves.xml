@@ -65,7 +65,8 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="79dp" />
+        tools:layout_editor_absoluteY="79dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/AllBooks"
@@ -75,7 +76,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchByNameBar"
         app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/SearchBySeriesBtn"
